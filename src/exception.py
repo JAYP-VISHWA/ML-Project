@@ -10,7 +10,7 @@ def error_message_detail(error, error_detail:sys):
     return error_message
 
 
-class CostumException(Exception):
+class CustomException(Exception):
     def __init__(self, error_message, error_details:sys) -> None:
         super().__init__(error_message) 
         self.error_message = error_message_detail(error_message, error_detail=error_details)
@@ -24,5 +24,5 @@ if __name__=="__main__":
         a = 1/0
     except Exception as ex:
         logging.info("Devide by zero")
-        raise CostumException(ex, sys)
+        raise CustomException(ex, sys)
         
